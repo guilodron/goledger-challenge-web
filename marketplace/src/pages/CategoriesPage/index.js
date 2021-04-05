@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import AddButton from '../../components/AddButton';
 import {
     Container
 } from './styles';
 import CategoryImage from '../../assets/category.svg';
 import CategoryCard from '../../components/CategoryCard';
+import { GeneralContext } from '../../hooks/generalHook';
 
 const CategoriesPage = () => {
+
+    const generalContext = useContext(GeneralContext);
+
     return (
         <Container>
             <strong>Categories</strong>
@@ -14,22 +18,9 @@ const CategoriesPage = () => {
             <AddButton addName="product" callback={()=> alert('Bom dia!!')}/>
             <div className="category-display">
                 <div className="list">
-                    <CategoryCard nome="Cama" />
-                    <CategoryCard nome="Cama" />
-                    <CategoryCard nome="Cama" />
-                    <CategoryCard nome="Cama" />
-                    <CategoryCard nome="Cama" />
-                    <CategoryCard nome="Cama" />
-                    <CategoryCard nome="Cama" />
-                    <CategoryCard nome="Cama" />
-                    <CategoryCard nome="Cama" />
-                    <CategoryCard nome="Cama" />
-                    <CategoryCard nome="Cama" />
-                    <CategoryCard nome="Cama" />
-                    <CategoryCard nome="Cama" />
-                    <CategoryCard nome="Cama" />
-                    <CategoryCard nome="Cama" />
-                    <CategoryCard nome="Cama" />
+                    {generalContext.categories.map(category => (
+                        <CategoryCard nome={category.name} key={category['@key']} />
+                    ))}
                 </div>
                 <img src={CategoryImage} alt="Ilustração de produto"/>
             </div>

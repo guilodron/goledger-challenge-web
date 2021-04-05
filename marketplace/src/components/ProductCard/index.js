@@ -4,14 +4,14 @@ import {
     FaPencilAlt
 } from 'react-icons/fa';
 
-const ProductCard = ({productName}) => {
+const ProductCard = ({productName, price, seller}) => {
     return (
         <Container>
             <div className="nameSeller">
                 <span>{productName}</span>
-                <span>Apple</span>
+                <span>{seller || 'Vendedor nao informado'}</span>
             </div>
-            <strong>R$45,00</strong>
+            <strong>R${price},00</strong>
             <FaPencilAlt />
         </Container>
     )
