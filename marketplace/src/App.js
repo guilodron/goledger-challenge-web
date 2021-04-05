@@ -1,6 +1,19 @@
+import { HashRouter } from 'react-router-dom';
+import Sidebar from './components/Sidebar';
+import Routes from './Routes';
+import GlobalStyle from './styles/global';
+import {Container} from './styles/appStyle';
+
+
 function App() {
   return (
-    <h1>Bom dia</h1>
+    <HashRouter>
+      <GlobalStyle />
+      <Container>
+        <Sidebar />
+        <Routes />
+      </Container>
+    </HashRouter>
   );
 }
 
