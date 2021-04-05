@@ -1,14 +1,18 @@
 import { Container } from "./styles"
-
 import {
-    FaPencilAlt
+    FaPencilAlt,
+    FaTrashAlt
 } from 'react-icons/fa';
 
 const CategoryCard = ({nome}) => {
+
     return (
         <Container>
             <span>{nome}</span>
-            <FaPencilAlt />
+            <div className="icons">
+                <FaTrashAlt/>
+                <FaPencilAlt />
+            </div>
         </Container>
     )
 }

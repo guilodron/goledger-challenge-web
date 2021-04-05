@@ -1,7 +1,7 @@
 import { Container } from "./styles"
 
 import {
-    FaPencilAlt
+    FaPencilAlt, FaTrashAlt
 } from 'react-icons/fa';
 
 const ProductCard = ({productName, price, seller}) => {
@@ -12,7 +12,10 @@ const ProductCard = ({productName, price, seller}) => {
                 <span>{seller || 'Vendedor nao informado'}</span>
             </div>
             <strong>R${price},00</strong>
-            <FaPencilAlt />
+            <div className="icons">
+                <FaTrashAlt/>
+                <FaPencilAlt />
+            </div>
         </Container>
     )
 }

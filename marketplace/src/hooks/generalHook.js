@@ -58,30 +58,12 @@ const GeneralProvider = ({ children }) => {
         await loadProducts();
     }
 
-    const deleteAsset = async (key, type) => {
-        if(type == 'product'){
-            const newProducts = products.filter(product => product['@key'] !== key);
-            setProducts(newProducts);
-        }else if(type == 'seller') {
-            const newSellers = sellers.filter(seller => seller['@key'] !== key);
-            setProducts(newSellers);
-        } else {
-            const newCategories = categories.filter(category => category['@key'] !== key);
-            setProducts(newCategories);
-        }
-        await axios.delete('/invoke/deleteAsset', {
-            key: {
-                '@key': key
-            }
-        })
-    }
-
     useEffect(() => {
         loadData();
-    }, []);
+    });
 
     return (
-        <GeneralContext.Provider value={{ products, sellers, categories, deleteAsset }}>
+        <GeneralContext.Provider value={{ products, sellers, categories }}>
             {children}
         </GeneralContext.Provider>
     );

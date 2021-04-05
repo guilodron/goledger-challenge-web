@@ -1,4 +1,4 @@
-import {useContext} from 'react';
+import {useContext, useEffect} from 'react';
 import {GeneralContext} from '../../hooks/generalHook';
 import DashboardImage from '../../assets/dashboard.svg';
 import CategoryCard from '../../components/CategoryCard';
@@ -14,6 +14,9 @@ const Dashboard = () => {
     const firstSellers = generalContext.sellers.slice(0, 3);
     const firstProducts = generalContext.products.slice(0, 3);
 
+    useEffect(() => {
+    }, [generalContext.categories, generalContext.sellers, generalContext.products])
+
     return (
         <Container>
             <strong>Dashboard</strong>
@@ -23,7 +26,7 @@ const Dashboard = () => {
                 <div className="Box">
                     <span>Categories</span>
                     {firstCategories.map(category => (
-                        <CategoryCard nome={category.name} key={category['@key']} />
+                        <CategoryCard nome={category.name} key={category['@key']} chave={category['@key']} />
                     ))}
                     <Link to="categories">Ver todos</Link>
                 </div>

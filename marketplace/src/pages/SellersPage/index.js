@@ -21,14 +21,6 @@ const SellersPage = () => {
                     {generalContext.sellers.map(seller => (
                         <SellerCard key={seller['@key']} address={seller.address} cnpj={seller.cnpj} sellerName={seller.name} />
                     ))}
-                    <SellerCard address="avenida dos coqueiros 2" cnpj="07.357.036/0001-76" sellerName="Apple" />
-                    <SellerCard address="avenida dos coqueiros 2" cnpj="07.357.036/0001-76" sellerName="Apple" />
-                    <SellerCard address="avenida dos coqueiros 2" cnpj="07.357.036/0001-76" sellerName="Apple" />
-                    <SellerCard address="avenida dos coqueiros 2" cnpj="07.357.036/0001-76" sellerName="Apple" />
-                    <SellerCard address="avenida dos coqueiros 2" cnpj="07.357.036/0001-76" sellerName="Apple" />
-                    <SellerCard address="avenida dos coqueiros 2" cnpj="07.357.036/0001-76" sellerName="Apple" />
-                    <SellerCard address="avenida dos coqueiros 2" cnpj="07.357.036/0001-76" sellerName="Apple" />
-                    <SellerCard address="avenida dos coqueiros 2" cnpj="07.357.036/0001-76" sellerName="Apple" />
                 </div>
                 <img src={SellerImage} alt="Ilustração de produto"/>
             </div>
